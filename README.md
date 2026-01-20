@@ -219,10 +219,19 @@ SSUM-SNOW/
 
 ```
 
-Only **summary outputs** are provided for all stations.  
-Full hourly series are intentionally limited to a **single reference trace** for auditability without file explosion.
+Only **summary outputs** are included directly in the main folder structure
+to keep the repository readable and focused.
 
-Large raw datasets are intentionally excluded to preserve clarity, reproducibility, and structural focus.
+Comprehensive **multi-station evidence** is provided in the `evidence/` folder:
+- All SSUM-formatted inputs across 10 stations (zipped)
+- All corresponding hourly structural summaries across 10 stations (zipped)
+
+Full hourly structural series are intentionally published for **one reference station**
+(Milwaukee) to enable deep auditability without file explosion.
+
+Large raw meteorological datasets are intentionally excluded.
+This preserves clarity, reproducibility, and structural interpretability,
+while still providing complete proof of multi-station validation.
 
 ---
 
