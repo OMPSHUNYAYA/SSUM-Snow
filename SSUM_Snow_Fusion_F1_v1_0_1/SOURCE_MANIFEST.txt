@@ -1,0 +1,87 @@
+SOURCE MANIFEST
+
+NOAA / NWS / NCEP NATIONAL BLEND OF MODELS
+
+Archive root:
+https://noaa-nbm-grib2-pds.s3.amazonaws.com/
+
+File pattern:
+https://noaa-nbm-grib2-pds.s3.amazonaws.com/blend.YYYYMMDD/01/text/blend_nbstx.t01z
+
+Cycle:
+01 UTC on target date D.
+
+Fields:
+S06 - six-hour forecast snow amount field used by the 2025 R3 case-admission rule.
+P06 - six-hour probability of precipitation, percent.
+PSN - conditional probability of snow, percent.
+
+2025 R3:
+A station-day is score-complete only when required local-day S06, P06 and PSN values are all present. NOAA -99 is missing.
+
+2026 R4:
+NBM_JOINT_DAY = max((P06/100)*(PSN/100)) over required six-hour endpoints on target-station local date D. S06 is not part of the R4 joint-only predictor parser.
+
+NOAA / NCEI GHCN-DAILY RAW .DLY
+
+Archive root:
+https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/
+
+Format reference:
+https://www.ncei.noaa.gov/pub/data/ghcn/daily/readme.txt
+
+Elements used:
+TMAX, TMIN, PRCP, SNOW.
+
+Native raw units described by GHCN-Daily:
+TMAX, TMIN - tenths of degrees C.
+PRCP - tenths of millimetres.
+SNOW - millimetres.
+
+Quality handling:
+-9999 is missing.
+Nonblank QFLAG is inadmissible.
+
+Historical 2025 SPF1 feature convention:
+The frozen R3 predictor divided the raw integer by 10 for TMAX, TMIN, PRCP and SNOW before constructing SPF1 features. This convention is preserved solely to reconstruct the frozen model input.
+
+Truth convention:
+Raw SNOW integer > 0 is an event after the quality gate.
+
+NOAA / NCEI DAILY SUMMARIES SERVICE
+
+Endpoint:
+https://www.ncei.noaa.gov/access/services/data/v1
+
+2026 R4 predictor request:
+dataset=daily-summaries
+dataTypes=TMAX,TMIN,PRCP,SNOW
+units=metric
+includeAttributes=false
+format=json
+startDate=D-2
+endDate=D-1
+stations=the 15 declared GHCN station identifiers
+
+The numeric values returned by this service are consumed directly by the frozen R4 feature builder.
+
+TARGET STATIONS
+ALBANY       USW00014735 KALB ET
+BURLINGTON   USW00014742 KBTV ET
+SYRACUSE     USW00014771 KSYR ET
+CLEVELAND    USW00014820 KCLE ET
+DETROIT      USW00094847 KDTW ET
+MADISON      USW00014837 KMSN CT
+GREEN_BAY    USW00014898 KGRB CT
+DULUTH       USW00014913 KDLH CT
+
+UPSTREAM STATIONS
+BUFFALO       USW00014733 KBUF ET
+ROCHESTER_NY  USW00014768 KROC ET
+TOLEDO        USW00094830 KTOL ET
+GRAND_RAPIDS  USW00094860 KGRR ET
+LA_CROSSE     USW00014920 KLSE CT
+MINNEAPOLIS   USW00014922 KMSP CT
+FARGO         USW00014914 KFAR CT
+
+Raw source payloads and caches are not included. See THIRD_PARTY_DATA_NOTICE.md.

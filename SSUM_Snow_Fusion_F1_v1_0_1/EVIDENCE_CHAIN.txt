@@ -1,0 +1,48 @@
+EVIDENCE CHAIN
+
+SPF1 MODEL HISTORY
+2010-2020 development
+-> 2021-2022 independent-period confirmation
+-> 2024 second replication period
+-> coefficients frozen before 2025 NBM comparison
+
+2025 STANDALONE BENCHMARK
+1,200 frozen SPF1 predictions
++ 1,200 score-complete NBM station-days
+-> 1,192 common predictor pairs
++ quality-admissible target-day GHCN truth
+-> 392 events
+-> SPF1 ROC AUC 0.760264668367
+-> NBM joint ROC AUC 0.910983737245
+-> standalone SPF1 superiority not demonstrated
+
+2025 COMPLEMENTARITY AND WEIGHT FREEZE
+chronology-preserving fusion analysis
+-> SPF1 complementarity observed
+-> fixed-weight robustness ladder
+-> passing SPF1-weight region 0.10 through 0.30
+-> fixed choice 0.25
+-> F1 = 0.75 R_NBM + 0.25 R_SPF1
+
+2026 HISTORICAL PREQUENTIAL BENCHMARK
+frozen formula and 2025 rank reference
+-> 90 target dates x 8 stations
+-> 720 frozen predictor rows
+-> raw GHCN target truth
+-> 238 events
+-> ROC AUC delta +0.015520938666
+-> PR-AUC delta +0.037914636259
+-> 6/8 positive stations
+-> both bootstrap lower bounds > 0
+-> all seven gates PASS
+
+SOURCE PARITY AUDIT
+current-source cache
+-> frozen receipt identities verified
+-> 2025 SPF1 values: 0 mismatches
+-> 2025 NBM values: 0 mismatches
+-> 2025 truth: 0 mismatches
+-> 2026 NBM values: 0 mismatches
+-> 2026 truth: 0 mismatches
+-> 2026 prequential SPF1 values: 0 mismatches
+-> overall PASS

@@ -1,0 +1,52 @@
+{
+  "date": "2026-08-24",
+  "frozen_receipt_identities": "PASS",
+  "independent_third_party_replication": false,
+  "network_used": false,
+  "overall": "PASS",
+  "r3_2025": {
+    "common_predictor_count": 1192,
+    "common_predictor_count_match": true,
+    "nbm": {
+      "actual_count": 1200,
+      "frozen_count": 1200,
+      "mismatches": 0,
+      "source_missing_exclusions": 8,
+      "status": "PASS"
+    },
+    "spf1": {
+      "actual_count": 1200,
+      "frozen_count": 1200,
+      "mismatches": 0,
+      "status": "PASS"
+    },
+    "truth": {
+      "actual_count": 1208,
+      "frozen_count": 1208,
+      "mismatches": 0,
+      "status": "PASS"
+    }
+  },
+  "r4_2026": {
+    "nbm": {
+      "actual_count": 720,
+      "frozen_count": 720,
+      "mismatches": 0,
+      "source_missing_exclusions": 0,
+      "status": "PASS"
+    },
+    "prequential_spf1": {
+      "actual_count": 720,
+      "frozen_count": 720,
+      "mismatches": 0,
+      "status": "PASS"
+    },
+    "truth": {
+      "actual_count": 720,
+      "frozen_count": 720,
+      "mismatches": 0,
+      "status": "PASS"
+    }
+  },
+  "schema": "SSUM_SNOW_SOURCE_PARITY_RESULT_1.0"
+}

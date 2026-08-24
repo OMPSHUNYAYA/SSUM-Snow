@@ -1,0 +1,121 @@
+{
+  "contiguous_passing_spf1_weights": [
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3
+  ],
+  "historical_analysis_receipt_sha256": "d8bf5fb09a613a1d92f02eff581837b9db7b08998700a133084b041f81912681",
+  "nbm_joint_roc_auc": 0.917500834168,
+  "out_of_fold_events": 296,
+  "out_of_fold_n": 944,
+  "schema": "SSUM_SNOW_2025_FIXED_WEIGHT_ROBUSTNESS_1.0",
+  "selected_nbm_joint_weight": 0.75,
+  "selected_spf1_weight": 0.25,
+  "selection_rule": "simple central value within the contiguous passing region",
+  "weights": [
+    {
+      "delta_roc_auc": 0.013169419419,
+      "nbm_joint_weight": 0.9,
+      "out_of_fold_roc_auc": 0.930670253587,
+      "passes_declared_robustness": true,
+      "positive_chronology_folds": 3,
+      "positive_stations": 8,
+      "spf1_weight": 0.1,
+      "station_bootstrap_95": [
+        0.007442548832,
+        0.019179791049
+      ],
+      "temporal_bootstrap_95": [
+        0.005758940483,
+        0.020254526979
+      ]
+    },
+    {
+      "delta_roc_auc": 0.015984734735,
+      "nbm_joint_weight": 0.85,
+      "out_of_fold_roc_auc": 0.933485568902,
+      "passes_declared_robustness": true,
+      "positive_chronology_folds": 3,
+      "positive_stations": 8,
+      "spf1_weight": 0.15,
+      "station_bootstrap_95": [
+        0.008697244277,
+        0.02459282559
+      ],
+      "temporal_bootstrap_95": [
+        0.006773014152,
+        0.024306187841
+      ]
+    },
+    {
+      "delta_roc_auc": 0.016878858025,
+      "nbm_joint_weight": 0.8,
+      "out_of_fold_roc_auc": 0.934379692192,
+      "passes_declared_robustness": true,
+      "positive_chronology_folds": 3,
+      "positive_stations": 8,
+      "spf1_weight": 0.2,
+      "station_bootstrap_95": [
+        0.008981989834,
+        0.026363349584
+      ],
+      "temporal_bootstrap_95": [
+        0.005564634507,
+        0.026133958419
+      ]
+    },
+    {
+      "delta_roc_auc": 0.016790227728,
+      "nbm_joint_weight": 0.75,
+      "out_of_fold_roc_auc": 0.934291061895,
+      "passes_declared_robustness": true,
+      "positive_chronology_folds": 3,
+      "positive_stations": 8,
+      "spf1_weight": 0.25,
+      "station_bootstrap_95": [
+        0.007914445935,
+        0.027088412576
+      ],
+      "temporal_bootstrap_95": [
+        0.004389018718,
+        0.028429795677
+      ]
+    },
+    {
+      "delta_roc_auc": 0.016010802469,
+      "nbm_joint_weight": 0.7,
+      "out_of_fold_roc_auc": 0.933511636637,
+      "passes_declared_robustness": true,
+      "positive_chronology_folds": 3,
+      "positive_stations": 8,
+      "spf1_weight": 0.3,
+      "station_bootstrap_95": [
+        0.006545173176,
+        0.027991341102
+      ],
+      "temporal_bootstrap_95": [
+        0.002786262367,
+        0.028840249968
+      ]
+    },
+    {
+      "delta_roc_auc": 0.013875855022,
+      "nbm_joint_weight": 0.65,
+      "out_of_fold_roc_auc": 0.931376689189,
+      "passes_declared_robustness": false,
+      "positive_chronology_folds": 3,
+      "positive_stations": 7,
+      "spf1_weight": 0.35,
+      "station_bootstrap_95": [
+        0.002804389806,
+        0.027824023144
+      ],
+      "temporal_bootstrap_95": [
+        -0.001367681606,
+        0.029116153925
+      ]
+    }
+  ]
+}

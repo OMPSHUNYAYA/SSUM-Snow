@@ -1,0 +1,118 @@
+{
+  "all_predeclared_gates_pass": true,
+  "delta": {
+    "pr_auc": 0.037914636259,
+    "roc_auc": 0.015520938666
+  },
+  "eligible_stations": 8,
+  "events": 238,
+  "fusion_f1": {
+    "pr_auc": 0.875097075669,
+    "roc_auc": 0.927167962621
+  },
+  "gates": {
+    "common_cases_ge_600": true,
+    "events_ge_100": true,
+    "positive_stations_ge_6": true,
+    "pr_auc_delta_ge_0": true,
+    "roc_auc_delta_ge_0_01": true,
+    "station_bootstrap_lower_gt_0": true,
+    "temporal_bootstrap_lower_gt_0": true
+  },
+  "historical_final_score_sha256": "9cf14b6c373100dc054b94a257f725342e4426620c035653813eaa12f9fc74e2",
+  "n": 720,
+  "nbm_joint": {
+    "pr_auc": 0.83718243941,
+    "roc_auc": 0.911647023955
+  },
+  "non_events": 482,
+  "period": {
+    "end": "2026-03-31",
+    "start": "2026-01-01"
+  },
+  "positive_stations": 6,
+  "schema": "SSUM_SNOW_2026_RESERVED_PERIOD_REPLICATION_1.0",
+  "scientific_classification": "REPLICATED_INCREMENTAL_NBM_DISCRIMINATION_ON_DECLARED_2026_JFM_BENCHMARK",
+  "station_cluster_bootstrap_20000_95": [
+    0.006764452593,
+    0.024041287735
+  ],
+  "stations": [
+    {
+      "delta_roc_auc": 0.012615384615,
+      "events": 25,
+      "fusion_f1_roc_auc": 0.907692307692,
+      "n": 90,
+      "nbm_roc_auc": 0.895076923077,
+      "positive": true,
+      "target": "ALBANY"
+    },
+    {
+      "delta_roc_auc": 0.033656297807,
+      "events": 37,
+      "fusion_f1_roc_auc": 0.915859255482,
+      "n": 90,
+      "nbm_roc_auc": 0.882202957675,
+      "positive": true,
+      "target": "BURLINGTON"
+    },
+    {
+      "delta_roc_auc": 0.035079051383,
+      "events": 46,
+      "fusion_f1_roc_auc": 0.910079051383,
+      "n": 90,
+      "nbm_roc_auc": 0.875,
+      "positive": true,
+      "target": "SYRACUSE"
+    },
+    {
+      "delta_roc_auc": -0.001846153846,
+      "events": 25,
+      "fusion_f1_roc_auc": 0.934153846154,
+      "n": 90,
+      "nbm_roc_auc": 0.936,
+      "positive": false,
+      "target": "CLEVELAND"
+    },
+    {
+      "delta_roc_auc": 0.024397413286,
+      "events": 27,
+      "fusion_f1_roc_auc": 0.932098765432,
+      "n": 90,
+      "nbm_roc_auc": 0.907701352146,
+      "positive": true,
+      "target": "DETROIT"
+    },
+    {
+      "delta_roc_auc": 0.011860637509,
+      "events": 19,
+      "fusion_f1_roc_auc": 0.952557449963,
+      "n": 90,
+      "nbm_roc_auc": 0.940696812454,
+      "positive": true,
+      "target": "MADISON"
+    },
+    {
+      "delta_roc_auc": 0.022836538462,
+      "events": 26,
+      "fusion_f1_roc_auc": 0.932091346154,
+      "n": 90,
+      "nbm_roc_auc": 0.909254807692,
+      "positive": true,
+      "target": "GREEN_BAY"
+    },
+    {
+      "delta_roc_auc": -0.006113769272,
+      "events": 33,
+      "fusion_f1_roc_auc": 0.921318447634,
+      "n": 90,
+      "nbm_roc_auc": 0.927432216906,
+      "positive": false,
+      "target": "DULUTH"
+    }
+  ],
+  "temporal_block_bootstrap_20000_95": [
+    0.002057587939,
+    0.02519794617
+  ]
+}

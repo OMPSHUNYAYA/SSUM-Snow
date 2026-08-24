@@ -1,0 +1,29 @@
+REPRODUCIBILITY SCOPE
+
+The package is self-contained with respect to project-controlled code, specification, expected scientific results, source locators and frozen evidence identities.
+
+No earlier SSUM-Snow project directory is required.
+
+OFFLINE CHECKS
+- package checksum and evidence consistency;
+- reference implementation self-test;
+- source reproducer self-test.
+
+FULL SOURCE RECONSTRUCTION
+The source reproducer acquires the declared NOAA/NCEI source files when they are absent from `source_cache/`.
+
+It reconstructs:
+- 2025 SPF1 predictions under the frozen historical feature convention;
+- 2025 R3 NBM values with the S06/P06/PSN missing-data rule;
+- the 1,192-case 2025 common predictor reference;
+- 2025 standalone and fixed-weight chronology metrics;
+- 2026 R4 NBM joint predictions;
+- 2026 date-bounded prequential SPF1 predictions from NCEI Daily Summaries;
+- 2026 raw GHCN truth;
+- the final 2026 Fusion-F1 metrics, station directions and bootstrap intervals.
+
+RAW SOURCES
+Acquisition caches are generated locally and are not included in the package. They may be deleted after verification if no longer needed.
+
+SCIENTIFIC IDENTITIES
+`SHA256SUMS.txt` intentionally covers only scientifically material evidence, specification and core implementation files. Editorial documentation, LICENSE and source notices are not treated as frozen scientific identities.

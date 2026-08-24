@@ -1,0 +1,53 @@
+SSUM-SNOW FUSION-F1 - SCIENTIFIC STATUS
+
+FIXED FORMULA
+F1 = 0.75 * R_NBM + 0.25 * R_SPF1
+
+SPF1 PROVENANCE
+Development: 2010-2020
+Independent-period confirmation: 2021-2022
+Second replication period: 2024
+SPF1 coefficients were frozen before the 2025 NBM comparison.
+
+2025 STANDALONE BENCHMARK
+Common cases: 1,192
+Events: 392
+SPF1 ROC AUC: 0.760264668367
+NBM joint ROC AUC: 0.910983737245
+Result: standalone SPF1 superiority over the declared archived NBM comparator was not demonstrated.
+
+2025 FUSION ANALYSIS
+The fixed-weight analysis produced a contiguous passing SPF1-weight region from 0.10 through 0.30. Weight 0.25 was selected before the 2026 reserved-period score.
+
+2026 RESERVED-PERIOD EVALUATION
+Period: 2026-01-01 through 2026-03-31
+Cases: 720
+Events: 238
+Non-events: 482
+
+NBM joint ROC AUC: 0.911647023955
+Fusion-F1 ROC AUC: 0.927167962621
+Delta ROC AUC: +0.015520938666
+
+NBM joint PR-AUC: 0.837182439410
+Fusion-F1 PR-AUC: 0.875097075669
+Delta PR-AUC: +0.037914636259
+
+Positive stations: 6/8
+Temporal-block bootstrap 95%: [+0.002057587939, +0.025197946170]
+Station-cluster bootstrap 95%: [+0.006764452593, +0.024041287735]
+
+All seven predeclared gates passed.
+
+SOURCE PARITY
+A cache-only parity audit against the frozen historical predictor and truth receipts produced zero mismatches for:
+- 1,200 2025 SPF1 predictions;
+- 1,200 2025 NBM predictions;
+- 1,208 2025 truth rows;
+- 720 2026 NBM predictions;
+- 720 2026 truth rows;
+- 720 2026 prequential SPF1 predictions.
+The 2025 common predictor count reproduced as 1,192 with the expected eight NBM source-missing exclusions.
+
+INTERPRETATION
+The supported result is incremental snow-event discrimination over the declared archived NBM joint comparator on the specified 2026 benchmark. The effect is modest. Fusion-F1 uses NBM input and is not a standalone forecasting system.

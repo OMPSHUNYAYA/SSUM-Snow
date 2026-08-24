@@ -1,0 +1,42 @@
+{
+  "common_cases": 1192,
+  "events": 392,
+  "historical_score_receipt_sha256": "509b9af760f1b73c0c17ce2b2bc092a06337e617cbffbbc7b300b093cdf7b6cb",
+  "nbm_joint": {
+    "pr_auc": 0.8549787219684549,
+    "roc_auc": 0.910983737244898
+  },
+  "nbm_s06": {
+    "pr_auc": 0.7352367642928685,
+    "roc_auc": 0.8118096301020408
+  },
+  "non_events": 800,
+  "period": {
+    "months": [
+      1,
+      2,
+      3,
+      11,
+      12
+    ],
+    "year": 2025
+  },
+  "positive_stations_vs_nbm_joint": 0,
+  "positive_stations_vs_nbm_s06": 0,
+  "schema": "SSUM_SNOW_2025_STANDALONE_RESULT_1.0",
+  "scientific_result": "SPF1_STANDALONE_SUPERIORITY_NOT_DEMONSTRATED",
+  "spf1": {
+    "pr_auc": 0.5713264383974201,
+    "roc_auc": 0.760264668367347
+  },
+  "spf1_delta_vs_nbm_joint": -0.15071906887755104,
+  "spf1_delta_vs_nbm_s06": -0.051544961734693806,
+  "station_cluster_bootstrap_95_vs_nbm_joint": [
+    -0.17872115334069283,
+    -0.11088375146428653
+  ],
+  "station_cluster_bootstrap_95_vs_nbm_s06": [
+    -0.0626424546451747,
+    -0.03972812972018314
+  ]
+}

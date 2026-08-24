@@ -1,0 +1,92 @@
+METHODOLOGY
+
+1. TARGET
+Binary snow event on the target-station local calendar day.
+EVENT = 1 for quality-admissible raw GHCN-Daily SNOW > 0.
+EVENT = 0 for quality-admissible raw GHCN-Daily SNOW = 0.
+
+2. TARGET STATIONS
+Albany, Burlington, Syracuse, Cleveland, Detroit, Madison, Green Bay and Duluth.
+
+3. SPF1
+SPF1 is a deterministic logistic score using previous-day target and declared upstream observations. The frozen feature vector contains target temperature, temperature range, precipitation, snow, one-day snow lag, annual phase, upstream temperature/precipitation/snow, target-upstream temperature gradient and cold/upstream interaction terms.
+
+Development period: 2010-2020.
+Independent-period confirmation: 2021-2022.
+Second replication period: 2024.
+The coefficients were frozen before the 2025 NBM comparison.
+
+4. 2025 SPF1 SOURCE CONVENTION
+The frozen 2025 R3 predictor implementation read GHCN-Daily raw `.dly` records and divided the raw integer by 10 for each of TMAX, TMIN, PRCP and SNOW before constructing SPF1 features.
+
+This historical model-input convention is reproduced exactly. It must not be replaced by a later unit reinterpretation when reconstructing the frozen predictor.
+
+For 2025 target truth, the raw SNOW integer is used directly for the binary event test. `-9999` is missing and a nonblank QFLAG is inadmissible.
+
+5. 2025 NBM COMPARATOR AND CASE ADMISSION
+Archived NBM NBS station guidance from the 01 UTC cycle on target date D is parsed as fixed-width data.
+
+For required six-hour endpoints whose valid time falls on target-station local date D:
+JOINT_6H = (P06 / 100) * (PSN / 100)
+NBM_JOINT_DAY = max(JOINT_6H)
+
+The 2025 R3 benchmark also declared S06. A station-day enters the NBM predictor pool only when S06, P06 and PSN are all present for every required local-day endpoint. NOAA `-99` is missing and is never imputed as zero.
+
+Declared 2025 station-date blocks: 1,208.
+NBM score-complete rows: 1,200.
+SPF1 prediction rows: 1,200.
+Common predictor pairs: 1,192.
+
+6. FUSION-F1
+R_NBM(x) = midrank empirical CDF of x against the 1,192-case 2025 common-predictor NBM joint reference.
+R_SPF1(x) = midrank empirical CDF of x against the 1,192-case 2025 common-predictor SPF1 reference.
+
+F1 = 0.75 * R_NBM + 0.25 * R_SPF1
+
+7. 2025 ANALYSIS
+SPF1 standalone ROC AUC: 0.760264668367.
+NBM joint ROC AUC: 0.910983737245.
+Standalone SPF1 superiority was not demonstrated.
+
+Chronology-preserving fusion analysis showed complementary information. A fixed weight ladder tested SPF1 weights 0.10 through 0.35. The contiguous passing region was 0.10 through 0.30, and 0.25 was selected as a simple central fixed value before the 2026 score.
+
+8. 2026 PREQUENTIAL PREDICTOR PATH
+Period: 2026-01-01 through 2026-03-31.
+
+For target day D:
+- request NCEI Daily Summaries only for D-2 through D-1;
+- construct SPF1(D) from returned metric values;
+- use archived 01 UTC NBM NBS guidance for D;
+- parse the R4 NBM comparator from P06 and PSN only;
+- compute F1(D) with the frozen 2025 reference;
+- then advance to the next target day.
+
+The source reproducer uses the same date-bounded observation request geometry.
+
+9. 2026 TRUTH
+Raw GHCN-Daily `.dly` SNOW records are used.
+Admissible: raw value present and QFLAG blank.
+Event: raw SNOW integer > 0.
+Non-event: raw SNOW integer = 0.
+
+10. METRICS
+Primary: ROC AUC.
+Secondary: tie-invariant threshold-group average-precision PR-AUC.
+Fusion-F1 is a discrimination score, not a calibrated probability.
+
+11. UNCERTAINTY
+20,000-replicate percentile bootstrap of AUC(F1)-AUC(NBM):
+- temporal clusters: `(calendar_month, floor((day_of_month-1)/7))`;
+- station clusters: target station;
+- seed: 20260824.
+
+12. PREDECLARED 2026 GATES
+- common cases >= 600
+- events >= 100
+- ROC AUC delta >= +0.01
+- positive stations >= 6
+- temporal bootstrap 95% lower bound > 0
+- station bootstrap 95% lower bound > 0
+- PR-AUC delta >= 0
+
+All seven gates passed on the declared 2026 benchmark.

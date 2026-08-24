@@ -1,0 +1,23 @@
+CLAIM BOUNDARIES
+
+SUPPORTED
+- The frozen Fusion-F1 formula improved non-zero-snow discrimination over the declared archived operational NBM joint comparator on the January-March 2026 eight-station historical prequential benchmark.
+- The observed ROC AUC difference was +0.015520938666.
+- The observed PR-AUC difference was +0.037914636259.
+- Six of eight station-level ROC AUC differences were positive.
+- Both predeclared bootstrap lower bounds were above zero.
+- All seven predeclared 2026 gates passed.
+
+NOT SUPPORTED
+- Standalone SSUM-Snow superiority over NBM.
+- Universal superiority over NBM or numerical weather prediction.
+- Superiority across arbitrary regions, seasons, NBM versions, snow thresholds or station networks.
+- Calibrated probability performance.
+- Operational decision, cost-loss or threshold utility superiority.
+- Third-party independent replication or certification.
+
+COMPARATOR SCOPE
+The comparator is the declared archived NBM NBS joint discrimination score based on P06 and PSN at the 01 UTC target-date cycle. The 2025 common-case construction additionally required the declared S06 field to be complete.
+
+PREFERRED SUMMARY
+SSUM-Snow Fusion-F1 showed a modest but consistently positive reserved-period improvement in snow-event discrimination over the declared archived NBM comparator.

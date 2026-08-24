@@ -1,0 +1,24 @@
+VERIFICATION
+
+1. Package consistency
+python -B verification/SSUM_Snow_Fusion_F1_Package_Verifier_v1_0_1.py
+Expected final line: PACKAGE_VERIFICATION_PASS
+
+2. Reference implementation
+python -B reference/SSUM_Snow_Fusion_F1_Reference_Implementation_v1_0_0.py --self-test
+Expected: checks:3/3 PASS
+
+3. Source reproducer self-test
+python -B verification/SSUM_Snow_Fusion_F1_Reproduction_v1_0_1.py --self-test
+Expected: checks:10/10 PASS
+
+4. Full source reconstruction
+python -B verification/SSUM_Snow_Fusion_F1_Reproduction_v1_0_1.py --run
+
+The full command uses `source_cache/` when files are already present and acquires missing NOAA/NCEI inputs otherwise. No earlier SSUM-Snow directory is required.
+
+The final result is written to:
+verification_output/SSUM_Snow_Fusion_F1_Source_Reproduction_Result_v1_0_1.json
+
+A successful run ends with:
+scientific_reproduction:PASS

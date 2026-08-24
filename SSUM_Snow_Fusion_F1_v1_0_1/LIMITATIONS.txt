@@ -1,0 +1,31 @@
+LIMITATIONS
+
+SCOPE
+- The reserved-period evaluation covers January-March 2026 at eight U.S. stations in the Northeast and Upper Midwest.
+- A single reserved winter block cannot establish broad climatological generalization.
+- Results may differ for other NBM versions, seasons, locations, snow regimes and event thresholds.
+
+UNCERTAINTY
+- The station-cluster bootstrap contains only eight clusters.
+- The temporal bootstrap lower bound is positive but close to zero (+0.002057587939).
+- The observed effect should be interpreted as modest rather than large.
+
+DISCRIMINATION ONLY
+- Fusion-F1 is a ranking score and is not asserted to be a calibrated probability.
+- The study does not establish Brier-score superiority, reliability calibration, decision-curve superiority, cost-loss value or operational threshold benefit.
+
+COMPARATOR
+- The comparator is the declared archived NBM NBS joint score derived from P06 and PSN.
+- The result does not establish superiority over every NBM snow field, model system or post-processing method.
+
+SOURCE SEMANTICS
+- The 2025 SPF1 reconstruction must preserve the historical feature convention used by the frozen predictor, including division of the raw GHCN SNOW integer by 10 for model-input construction.
+- This historical model-input convention is not a statement that the source archive's native SNOW unit is tenths of millimetres.
+- The 2025 truth path and 2026 truth path use raw GHCN SNOW only for the binary event test.
+- The 2026 predictor path uses date-bounded NCEI Daily Summaries metric values exactly as the frozen R4 implementation did.
+
+REPRODUCIBILITY
+- Static package verification and self-tests are deterministic.
+- Full source reconstruction requires access to the declared NOAA/NCEI sources.
+- Source archives may change availability, transport behavior or metadata without changing the frozen scientific evidence recorded here.
+- Project-source reconstruction is distinct from an independently authored replication.

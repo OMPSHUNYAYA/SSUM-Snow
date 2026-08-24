@@ -1,0 +1,133 @@
+{
+  "event_definition": "quality-admissible GHCN-Daily SNOW > 0 on target local calendar day",
+  "formula": "F1 = 0.75 * R_NBM + 0.25 * R_SPF1",
+  "name": "SSUM-Snow Fusion-F1",
+  "nbm": {
+    "cycle_utc": 1,
+    "daily_score": "max((P06/100)*(PSN/100)) over six-hour endpoints on target-station local calendar date",
+    "product": "NBS"
+  },
+  "rank_transform": {
+    "definition": "R(x) = (count(reference < x) + 0.5 * count(reference == x)) / N",
+    "reference_common_predictor_cases": 1192,
+    "reference_period": {
+      "months": [
+        1,
+        2,
+        3,
+        11,
+        12
+      ],
+      "year": 2025
+    },
+    "type": "midrank empirical CDF"
+  },
+  "schema": "SSUM_SNOW_FUSION_F1_SPECIFICATION_1.0.1",
+  "source_semantics": {
+    "r3_2025_nbm": {
+      "common_predictor_rows": 1192,
+      "missing_sentinel": -99,
+      "parser": "fixed-width NBS",
+      "required_fields_for_case_admission": [
+        "S06",
+        "P06",
+        "PSN"
+      ],
+      "score_complete_rows": 1200
+    },
+    "r3_2025_spf1": {
+      "historical_feature_conversion": "raw integer / 10 for TMAX, TMIN, PRCP and SNOW",
+      "source": "GHCN-Daily raw .dly",
+      "truth_conversion": "none; raw SNOW integer used only for event > 0 after quality gate"
+    },
+    "r4_2026_nbm": {
+      "missing_sentinel": -99,
+      "parser": "fixed-width NBS joint-only P06/PSN"
+    },
+    "r4_2026_spf1": {
+      "numeric_values_consumed_directly": true,
+      "request_window": "D-2 through D-1",
+      "source": "NCEI Daily Summaries service",
+      "units_parameter": "metric"
+    }
+  },
+  "spf1": {
+    "coef": [
+      -0.25371601338679917,
+      -0.1318924512720109,
+      0.04187160605137054,
+      0.14057361052281406,
+      -0.02468235788670808,
+      0.3843273548231735,
+      0.3704161203528799,
+      -0.22580438013076123,
+      0.132542646131337,
+      0.024425096716501282,
+      0.5946087986045814,
+      0.08947263724759182,
+      -0.2097064989561956,
+      0.022118870839349977
+    ],
+    "features": [
+      "tmean",
+      "trange",
+      "prcp",
+      "snow",
+      "snow_lag1",
+      "month_sin",
+      "month_cos",
+      "up_tmean",
+      "up_prcp",
+      "up_snow_sum",
+      "up_snow_any",
+      "temp_gradient",
+      "cold_up_snow",
+      "cold_up_prcp"
+    ],
+    "intercept": -1.1555249871811413,
+    "mean": [
+      -1.3655904267328967,
+      8.668337472717695,
+      1.9373748777000077,
+      1.0693384511176338,
+      1.0701663279897644,
+      0.37029225019976875,
+      0.6471835790691776,
+      -1.2459020094829532,
+      1.862150974636863,
+      2.112907353051855,
+      0.35982539324151425,
+      0.11968841724994358,
+      2.4565025965229172,
+      5.109482012493415
+    ],
+    "provenance": {
+      "2025_used_to_fit_spf1_coefficients": false,
+      "2026_used_to_fit_spf1_coefficients": false,
+      "development_period": "2010-2020",
+      "independent_confirmation_period": "2021-2022",
+      "second_replication_year": 2024,
+      "status_before_2025_nbm_comparison": "frozen unchanged from prior independent replication"
+    },
+    "scale": [
+      7.35291882784391,
+      4.101484949308128,
+      4.8460674424979855,
+      3.3221302118748395,
+      3.3267289197299026,
+      0.5561282423789786,
+      0.36709459605620676,
+      7.303488868934149,
+      4.238175265332385,
+      5.6747702786750365,
+      0.4799490385656625,
+      2.4185436081077936,
+      4.656087066755887,
+      16.57895097112088
+    ]
+  },
+  "weights": {
+    "nbm_joint": 0.75,
+    "spf1": 0.25
+  }
+}

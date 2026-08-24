@@ -1,0 +1,50 @@
+{
+  "historical_analysis_receipt_sha256": "76d0a511a14e9af6254a4da8ca6e1af17b95c8e5819362d6cb759c0175773ab8",
+  "nbm_only_ablation": {
+    "joint_plus_s06_delta_roc_auc": 0.000646479813,
+    "positive_stations": 3,
+    "station_bootstrap_95": [
+      -0.011702461875,
+      0.012871702522
+    ],
+    "temporal_bootstrap_95": [
+      -0.00823775936,
+      0.009442144361
+    ]
+  },
+  "out_of_fold": {
+    "delta_pr_auc": 0.014744579782,
+    "delta_roc_auc": 0.017181243744,
+    "events": 296,
+    "joint_plus_spf1_pr_auc": 0.880400200591,
+    "joint_plus_spf1_roc_auc": 0.934682077911,
+    "n": 944,
+    "nbm_joint_pr_auc": 0.865655620809,
+    "nbm_joint_roc_auc": 0.917500834168,
+    "positive_stations": 8,
+    "station_bootstrap_95": [
+      0.008783611074,
+      0.027417976953
+    ],
+    "temporal_bootstrap_95": [
+      0.005269763339,
+      0.028478902348
+    ]
+  },
+  "schema": "SSUM_SNOW_2025_FUSION_ANALYSIS_1.0",
+  "three_component": {
+    "delta_pr_auc": 0.018042145991,
+    "delta_roc_auc": 0.018914748081,
+    "positive_stations": 8,
+    "pr_auc": 0.8836977668,
+    "roc_auc": 0.936415582249,
+    "station_bootstrap_95": [
+      0.00940605775,
+      0.030106499378
+    ],
+    "temporal_bootstrap_95": [
+      0.006653303169,
+      0.030958798508
+    ]
+  }
+}
