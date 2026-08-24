@@ -2,8 +2,8 @@ LICENSE v1.0
 
 1. Scope
 
-This license applies to the materials distributed with this repository unless a
-specific file or directory states otherwise.
+This license applies to the materials distributed with this repository or package
+unless a specific file or directory states otherwise.
 
 The covered materials are divided into:
 
@@ -56,12 +56,16 @@ available under applicable law.
 
 4. Attribution
 
-Attribution is not required for use, modification, or redistribution of the
-reference implementations or verification artifacts, but it is appreciated.
+Attribution is not required for the project-authored reference implementations or
+verification artifacts, but it is appreciated.
 
-Where attribution is required for documentation or architecture materials, or
-where voluntary attribution is provided for a reference implementation,
-attribution may be provided in documentation, notices, credits, or another
+Where attribution is required for documentation or architecture materials, a
+reasonable attribution is:
+
+SSUM-Snow — Structural Snow Modeling
+Developed within the Shunyaya Framework
+
+Attribution may be provided in documentation, notices, credits, or another
 reasonable location appropriate to the form of redistribution or adaptation.
 
 Attribution must not imply endorsement.
