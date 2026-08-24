@@ -12,6 +12,8 @@
 ![Replication](https://img.shields.io/badge/Outside%20Replication-OPEN-orange)
 ![Shunyaya](https://img.shields.io/badge/Part%20of-Shunyaya%20Framework-gold)
 
+[![SSUM-Snow Verification](https://github.com/OMPSHUNYAYA/SSUM-Snow/actions/workflows/verification.yml/badge.svg)](https://github.com/OMPSHUNYAYA/SSUM-Snow/actions/workflows/verification.yml)
+
 ---
 
 ## Scientific status at a glance
