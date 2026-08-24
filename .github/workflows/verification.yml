@@ -1,0 +1,56 @@
+name: SSUM-Snow Verification
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "SSUM_Snow_Fusion_F1_v1_0_1/**"
+      - ".github/workflows/verification.yml"
+      - ".gitattributes"
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "SSUM_Snow_Fusion_F1_v1_0_1/**"
+      - ".github/workflows/verification.yml"
+      - ".gitattributes"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version:
+          - "3.9"
+          - "3.12"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verify scientific package
+        run: |
+          python -B SSUM_Snow_Fusion_F1_v1_0_1/verification/SSUM_Snow_Fusion_F1_Package_Verifier_v1_0_1.py
+
+      - name: Test Fusion-F1 reference implementation
+        run: |
+          python -B SSUM_Snow_Fusion_F1_v1_0_1/reference/SSUM_Snow_Fusion_F1_Reference_Implementation_v1_0_0.py --self-test
+
+      - name: Test source reproduction implementation
+        run: |
+          python -B SSUM_Snow_Fusion_F1_v1_0_1/verification/SSUM_Snow_Fusion_F1_Reproduction_v1_0_1.py --self-test
